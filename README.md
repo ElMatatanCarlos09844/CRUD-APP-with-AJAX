@@ -27,6 +27,6 @@ Sending the id of the post
 
 To practice execution and use install a local server to execute the ajax.html like **live server** in Visual Studio Code.
 
-normali the port for live server is 5500 but you can change the port, so go to http://localhost:port and use tha app.
+normally the port for live server is 5500 but you can change the port, so go to http://localhost:port and use tha app.
 
 
