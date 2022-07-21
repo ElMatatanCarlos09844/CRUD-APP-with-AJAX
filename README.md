@@ -1,8 +1,8 @@
 # to Use this project install whit npm some packages.
-1. npm install json-server
+1. npm install json-server -g
 
 execute this project with 
-- json-server -w -p 5550 assets/db.json -g
+- json-server -w -p 5550 assets/db.json
 
 http://localhost/5550 is the default url for the server.
 
