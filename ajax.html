@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Product App</title>
+    <!-- Bootswatch Cosmo Theme -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css"
+    />
+    <!-- Custom CSS -->
+
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">CRUD APP</a>
+    </nav>
+
+    <!-- POST CRUD -->
+    <div class="container">
+      <!-- APPLICATION -->
+      <div id="App" class="row pt-5">
+        <!-- FORM FOR ADD POSTS-->
+        <div class="col-md-4" style="display: flex; justify-content: space-around;">
+          <div class="card">
+
+            <div class="card-header">
+              <h4 id="crud-title">Add a post</h4>
+            </div>
+            <form id="crud-form" class="card-body">
+
+              <div class="form-group">
+                <input type="number" min="0" name="userId" placeholder="User ID" class="form-control" required="true" />
+              </div>
+
+              <div class="form-group">
+                <input type="text" name="title" placeholder="titulo del post" class="form-control" required="true"/>
+              </div>
+
+              <div class="form-group">
+                <textarea id="body" name="body" placeholder="cuerpo del post" class="form-control"rows="4" cols="50" required="true"></textarea>
+              </div>
+
+              <input type="submit" value="Save" class="formbtn btn-primary btn-block"/>
+              <input type="hidden" name="id"/>
+            </form>       
+
+          </div>
+        </div>
+
+        <!-- POSTS LISTS -->
+        <div class="col-md-8">
+          <div class="card-header " style="display: flex; justify-content: space-between;">
+            <h4 id="title-list">Posts List</h4>
+            <input id="see" class="btn btn-primary formbtn" type="button" value="See or refresh" />
+          </div>
+          <table id="crud-table" class="crud-table table ">
+            <thead class="thead-dark"><tr>
+              <th scope="col">ID</th>
+              <th scope="col">User ID</th>
+              <th scope="col">Title</th>
+              <th scope="col">Body</th>
+              <th scope="col">Actions</th>
+            </tr></thead>
+            <tbody id="post-list">
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <template id="crud-template">
+      <tr>
+        <td class="ID"></td>
+        <td class="userID"></td>
+        <td class="title"></td>
+        <td class="body"></td> 
+        <td style="display:flex; justify-content:space-between; align-items: center;">
+          <button href=#App type="button" class="edit btn btn-primary">Edit</button>
+          <button type="button" class="delete btn btn-danger">Delete</button></td>
+      </tr>
+    </template>
+
+    <script>
+      const d = document,
+        $table = d.getElementById('crud-table'),
+        $form = d.getElementById('crud-form'),
+        $title = d.getElementById('crud-title'),
+        $template = d.getElementById('crud-template').content;
+        $fragment = d.createDocumentFragment();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/ajax.js" ></script>
+  </body>
+</html>
